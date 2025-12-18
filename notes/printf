@@ -1,0 +1,94 @@
+=========================================================
+PRINTF FORMAT SPECIFIERS — CHEATSHEET (RAW TEXT)
+=========================================================
+
+INTEGER TYPES
+---------------------------------------------------------
+Data Type                | Format | Example Output
+-------------------------|--------|---------------
+signed integer           | %d     | 42
+signed integer           | %i     | 42
+unsigned integer         | %u     | 42
+short                    | %hd    | 42
+unsigned short           | %hu    | 42
+long                     | %ld    | 42
+unsigned long            | %lu    | 42
+long long                | %lld   | 42
+unsigned long long       | %llu   | 42
+
+
+FLOATING-POINT TYPES
+---------------------------------------------------------
+Data Type                | Format | Description
+-------------------------|--------|-------------------------
+float                    | %f     | decimal notation
+double                   | %f     | decimal notation
+long double              | %Lf    | decimal notation
+scientific notation      | %e     | 1.23e+03
+scientific notation      | %E     | 1.23E+03
+compact format           | %g     | auto f / e
+compact format           | %G     | auto f / E
+
+
+CHARACTERS & STRINGS
+---------------------------------------------------------
+Data Type                | Format | Description
+-------------------------|--------|-------------------------
+character                | %c     | single character
+string                   | %s     | null-terminated string
+string (precision)       | %.Ns   | max N characters
+
+
+POINTERS
+---------------------------------------------------------
+Data Type                | Format | Description
+-------------------------|--------|-------------------------
+pointer / address        | %p     | memory address
+
+
+NUMBER BASES
+---------------------------------------------------------
+Base                     | Format | Example
+-------------------------|--------|----------------
+hexadecimal (lower)      | %x     | 2a
+hexadecimal (upper)      | %X     | 2A
+octal                    | %o     | 52
+hex with prefix          | %#x    | 0x2a
+octal with prefix        | %#o    | 052
+
+
+WIDTH, PRECISION, ALIGNMENT
+---------------------------------------------------------
+Format                   | Meaning
+-------------------------|--------------------------------
+%5d                      | width 5, right-aligned
+%-5d                     | width 5, left-aligned
+%05d                     | width 5, zero-padded
+%.2f                     | 2 digits after decimal
+%8.2f                    | width 8, precision 2
+
+
+BOOLEAN
+---------------------------------------------------------
+Data Type                | Format | Output
+-------------------------|--------|---------
+boolean                  | %d     | 0 or 1
+
+
+MISCELLANEOUS
+---------------------------------------------------------
+Sequence                 | Meaning
+-------------------------|----------------
+%%                       | literal percent sign
+\n                       | new line
+\t                       | tab
+\"                       | double quote
+\\                       | backslash
+
+
+IMPORTANT NOTES
+---------------------------------------------------------
+- Format specifier must match variable type
+- Wrong specifier = undefined behavior
+- %f is used for both float and double
+- %lf is
