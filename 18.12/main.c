@@ -15,12 +15,15 @@ int read_line(char *buffer, size_t buffer_length) {
 
   // Fgets fails for 2 reasons
   if (fgets(buffer, buffer_length, stdin) == NULL) {
-
-    if (feof(stdin))
+    if (feof(stdin)) {
+      fflush(stdin);
       return EndOfFile; /// EOF
-
+    }
     if (ferror(stdin))
+    {
+      fflush(stdin);
       return FERR; // Broken IO
+    }
   }
 
   size_t str_buf_len = strlen(buffer);
