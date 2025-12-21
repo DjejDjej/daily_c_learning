@@ -4,14 +4,7 @@
 #define CODE_SIZE 10
 #define CONT_DEF_S 10
 
-enum status_codes {
-  UNINITIALIZED = -1,
-  OK = 0,
-  REALLOC_FAILED = 1,
-  MALLOC_FAILED = 2,
-  EOF_ERROR = 3,
-  IO_ERROR = 4
-};
+enum status_codes { UNINITIALIZED = -1, OK = 0, REALLOC_FAILED = 1, MALLOC_FAILED = 2, EOF_ERROR = 3, IO_ERROR = 4 };
 
 typedef struct {
   int status_code;
@@ -31,7 +24,6 @@ int safeRealloc(line *l, int size) {
   }
   return OK;
 }
-
 
 line readline_malloc() { // Memory is owned by function.
   char *content = malloc(CONT_DEF_S);
@@ -56,7 +48,7 @@ line readline_malloc() { // Memory is owned by function.
       l.content_size *= 2;
 
       if (safeRealloc(&l, l.content_size) == 1) {
-        l.status_code = REALLOC_FAILED; 
+        l.status_code = REALLOC_FAILED;
         return l;
       }
     }
@@ -68,7 +60,7 @@ line readline_malloc() { // Memory is owned by function.
   if (i >= l.content_size + 1) {
 
     if (safeRealloc(&l, l.content_size + 1) == 1) {
-      l.status_code = REALLOC_FAILED; 
+      l.status_code = REALLOC_FAILED;
       return l;
     }
   }

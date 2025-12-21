@@ -5,6 +5,9 @@
 #define LINE_DEF_SIZE 10
 #define ALL_CHARS_COUNT_DEF 100
 
+//TODO FIX MALLOC OF **result 
+//TOOD PRIDAT ROLLBACK
+
 enum status_codes {
   IN_PROGRESS = -1,
   OK = 0,
