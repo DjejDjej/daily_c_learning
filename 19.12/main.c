@@ -26,10 +26,12 @@ int safeRealloc(line *l, int size) {
 
     return REALLOC_FAILED;
 
-  } else
+  } else {
     l->content = tmp;
+  }
   return OK;
 }
+
 
 line readline_malloc() { // Memory is owned by function.
   char *content = malloc(CONT_DEF_S);
@@ -43,10 +45,8 @@ line readline_malloc() { // Memory is owned by function.
   }
   buff = getchar();
   if (buff == EOF) {
-    if (feof(stdin))
-      l.status_code = EOF_ERROR;
-    if (ferror(stdin))
-      l.status_code = IO_ERROR;
+    if (feof(stdin)) l.status_code = EOF_ERROR;
+    if (ferror(stdin)) l.status_code = IO_ERROR;
     return l;
   }
 
@@ -56,20 +56,19 @@ line readline_malloc() { // Memory is owned by function.
       l.content_size *= 2;
 
       if (safeRealloc(&l, l.content_size) == 1) {
-        l.status_code = REALLOC_FAILED; // REALLOC_FAILED
+        l.status_code = REALLOC_FAILED; 
         return l;
       }
     }
 
     l.content[i++] = buff;
     buff = getchar();
-    
   }
 
   if (i >= l.content_size + 1) {
 
     if (safeRealloc(&l, l.content_size + 1) == 1) {
-      l.status_code = REALLOC_FAILED; // REALLOC_FAILED
+      l.status_code = REALLOC_FAILED; 
       return l;
     }
   }

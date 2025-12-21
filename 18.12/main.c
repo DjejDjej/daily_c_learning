@@ -19,8 +19,7 @@ int read_line(char *buffer, size_t buffer_length) {
       fflush(stdin);
       return EndOfFile; /// EOF
     }
-    if (ferror(stdin))
-    {
+    if (ferror(stdin)) {
       fflush(stdin);
       return FERR; // Broken IO
     }
@@ -42,8 +41,7 @@ int read_line(char *buffer, size_t buffer_length) {
 int main(int argv, char **argc) {
 
   char *res = malloc(BUF_SIZE);
-  if (!res)
-    return 1; // Malloc failed
+  if (!res) return 1; // Malloc failed
   int code = read_line(res, BUF_SIZE);
   if (code > 0) {
     printf("%d", code);
