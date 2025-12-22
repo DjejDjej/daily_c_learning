@@ -1,0 +1,8 @@
+Write a function that splits a buffer into lines
+without allocating or copying individual strings.
+
+The function should return an array of views,
+each pointing into the original buffer.
+
+The original buffer must remain valid
+for as long as the views are used.
