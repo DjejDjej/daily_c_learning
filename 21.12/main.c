@@ -37,16 +37,7 @@ int cleanUP(char **result, size_t count, char *buff) {
   return 0;
 }
 
-int safe_realloc(char **buff, size_t size) {
 
-  void *tmp = realloc(*buff, size);
-  if (tmp == NULL) {
-    return REALLOC_FAILED;
-  } else {
-    *buff = tmp;
-    return 0;
-  }
-}
 
 int safe_realloc_Ar(char ***buff, size_t size) {
 
