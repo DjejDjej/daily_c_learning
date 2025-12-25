@@ -1,0 +1,12 @@
+& = vezmi adresu
+* = dereferencuj (vezmi hodnotu na adrese)
+
+int x;
+&x        -> int *
+int *p;
+*p        -> int
+int **pp;
+*pp       -> int * , **pp -> int
+
+T*  = měním OBSAH objektu
+T** = měním POINTER u callera
