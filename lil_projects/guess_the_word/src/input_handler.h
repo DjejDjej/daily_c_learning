@@ -1,5 +1,5 @@
-#ifndef GUESS_INPUT_HANDLER_h
-#define GUESS_INPUT_HANDLER_h
+#ifndef GUESS_INPUT_HANDLER_H
+#define GUESS_INPUT_HANDLER_H
 #include <stdbool.h>
 
 #include <string.h>

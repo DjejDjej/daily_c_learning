@@ -50,7 +50,7 @@ char *load_user_input(bool *full_sentence, int *status_code) {
   if (buff_index <= 1) *full_sentence = false;
   if (buff_index > 1) *full_sentence = true;
 
-  if (buff_index <= 1) // jen '\0'
+  if (buff_index <= 1) // only '\0'
     *status_code = BLANK_INPUT;
   else
     *status_code = OK;
