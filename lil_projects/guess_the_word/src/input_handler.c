@@ -4,6 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//TODO CLEANUP
+
+
 // Returns newly allocated string without '\n'.
 // Returns NULL on error
 // status_code describes the reason.
